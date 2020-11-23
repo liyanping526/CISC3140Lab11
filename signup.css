@@ -1,0 +1,14 @@
+.card{
+	margin:0 auto;
+	 width: 50rem;
+	 height:40rem
+}
+.card-header{
+	text-align: center;
+}
+.card-body{
+	text-align: center;
+}
+.col-sm-3{
+	text-align: right;
+}

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<!-- boostrap css -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<!-- css -->
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="signup.css">
+	
+	<!-- font family -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto|Rubik&display=swap" rel="stylesheet">
+	<!-- js -->
+	<script type="text/javascript" href="signup.js"></script>
+	<script>
+	function autotab(current,to){
+		if (current.getAttribute && 
+			current.value.length==current.getAttribute("maxlength")) {
+			to.focus() 
+		}
+	}
+	function confirmPass() {
+		var pass = document.getElementById("inputPassword").value
+		var confPass = document.getElementById("c_pass").value
+			if(pass != confPass) {
+				alert('Wrong confirm password !');
+		}
+	}
+
+	</script>
+</head>
+<body>
+	<!-- navbar -->
+	<nav class="navbar navbar-expand-lg">
+		<a class="navbar-brand" href="index.html">Food Paradise</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav">
+				<li class="nav-item active">
+					<a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="gallery.html">Gallery</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="login.html">Login</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="signup.html">Sign Up</a>
+				</li>
+			</ul>
+		</div>
+
+	</nav>
+	<!-- content -->
+	<div class="container">
+		<div class="card">
+			<div class="card-header">
+				<h2>Sign Up</h2>
+			</div>
+			<div class="card-body">
+				<form name="telephone" action="" method="post">
+					<div class="form-group row">
+						<label for="email" class="col-sm-3 col-form-label">Email ID<span class="text-danger">*</span></label>
+						<div class="col-sm-6">
+							<input type="email" class="form-control" id="email" placeholder="Enter your Email ID" value="" required>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="inputPassword" class="col-sm-3 col-form-label">Set Password<span class="text-danger">*</span></label>
+						<div class="col-sm-6">
+							<input type="password" class="form-control" id="inputPassword" placeholder="Enter your password"name="your_pass" value=""/>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="c_pass" class="col-sm-3 col-form-label">Confirm Password<span class="text-danger">*</span></label>
+						<div class="col-sm-6">
+							<input type="password" class="form-control" id="c_pass" placeholder="Confirm your password"name="your_c_pass" value="" onblur="confirmPass()"/>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="inputdate" class="col-sm-3 col-form-label">Date of Birth<span class="text-danger">*</span></label>
+						<div class="col-sm-6">
+							<input type="date" class="form-control" id="inputdate" placeholder="mm/dd/yyyy" value="" required>
+						</div>
+					</div>
+
+					<div class="form-group row" >
+						<label class="col-sm-3 col-form-label">Telephone<span class="text-danger">*</span></label>
+						<div class="col-sm-5 ">
+							<input type="text" name="phone0" 
+							size=2 onKeyup="autotab(this, document.telephone.phone1)" maxlength=1>- 
+							<input type="text" name="phone1" 
+							size=4 onKeyup="autotab(this, document.telephone.phone2)" maxlength=3>- 
+							<input type="text" name="phone2" 
+							size=4 onKeyup="autotab(this, document.telephone.phone3)" maxlength=3>- 
+							<input type="text" name="phone3" size=5 maxlength=4>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="number" class="col-sm-3 col-form-label">Leave Message</label>
+						<div class="col-sm-6">
+							<textarea rows="4" cols="40" maxlength="100" placeholder="Enter text here..."></textarea>
+						</div>
+					</div>
+					<button type="button" class="btn btn-primary">Submit</button>
+				</form>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+
+
+
+</html>
